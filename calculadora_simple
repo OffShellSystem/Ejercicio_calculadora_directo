@@ -1,0 +1,70 @@
+#!/bin/bash
+#Script en bash
+
+trap salir INT 
+
+function salir() {
+echo "Saliendo"
+exit
+}
+
+function sumar() {
+echo $(($num1 + $num2))
+}
+
+function restar() {
+echo $(($num1 - $num2))
+}
+
+function dividir(){
+echo $(($num1 / $num2))
+}
+
+function multiplicar(){
+echo $(($num1 * $num2))
+}
+
+function numero() {
+read -p 'número 1: ' num1
+read -p 'número 2: ' num2
+}
+
+echo -e "\e[1;35m Iniciando Script\e[0m"
+
+sleep 1
+read foo
+
+echo "Introduce los número a operar"
+
+read -p 'número 1: ' num1
+read -p 'número 2: ' num2
+
+
+while :
+do
+	echo "Opciones"
+	echo "1. Sumar"
+	echo "2. Restar"
+	echo "3. Dividir"
+	echo "4. Multiplicar"
+	echo "5. Nuevos números"
+
+echo "Esocoge Opción"
+echo -n "Opcion [ 1 - 4]"
+read opcion
+clear
+case $opcion in
+	1)echo "Procesando suma"
+	sumar;;
+	2)echo "Procesando resta"
+	restar;;
+	3)echo "Procesando división"
+	dividir;;
+	4)echo "Procesando multiplicación"
+	multiplicar;;
+	5)echo "Introducir números"
+	numero;;
+	
+esac
+done
+exit
