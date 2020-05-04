@@ -1,6 +1,8 @@
 #!/bin/bash
 #Script en bash
 
+#Creado por OffShell en el directo 2/07/2020 para ejercicios de la comunidad.
+
 trap salir INT 
 
 function salir() {
